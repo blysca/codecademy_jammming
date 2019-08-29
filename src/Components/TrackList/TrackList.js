@@ -7,7 +7,10 @@ export class TrackList extends React.Component {
     return (
       <div className="TrackList">
         {this.props.tracks.map( trackItem =>
-            <Track key={trackItem.id} track={trackItem}/>
+            <Track
+              onAdd={this.props.onAdd}
+              key={trackItem.id}
+              track={trackItem}/>
         )}
 
       </div>
