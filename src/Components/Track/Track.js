@@ -9,10 +9,6 @@ export class Track extends React.Component {
     this.removeTrack = this.removeTrack.bind(this);
   }
 
-  renderAction () {
-    return this.props.isRemoval ? '-' : '+';
-  }
-
   addTrack() {
     this.props.onAdd(this.props.track);
   }
