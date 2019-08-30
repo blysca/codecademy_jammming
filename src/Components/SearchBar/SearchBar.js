@@ -26,7 +26,7 @@ export class SearchBar extends React.Component {
         <input
           onChange={this.handleTermChange}
           placeholder="Enter A Song, Album, or Artist"/>
-        <button claasName="SearchButton">SEARCH</button>
+        <button className="SearchButton">SEARCH</button>
       </div>
     );
   }

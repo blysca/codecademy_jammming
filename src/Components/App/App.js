@@ -5,6 +5,8 @@ import { SearchBar } from '../SearchBar/SearchBar';
 import { SearchResults } from '../SearchResults/SearchResults';
 import { PlayList } from '../PlayList/PlayList';
 
+import Spotify from '../../util/Spotify'
+
 class App extends React.Component {
   constructor( props ) {
     super( props );
@@ -141,8 +143,11 @@ class App extends React.Component {
     const trackURIs = this.state.playlistTracks.map((track) => track.uri);
   }
 
-  search(searchStr) {
-    console.log('-- search string ', searchStr);
+  search(term) {
+    console.log('-- search string ', term);
+    Spotify.search(term).then(searchResults =>{
+      this.setState({searchResults: searchResults});
+    })
   }
 
   render() {
